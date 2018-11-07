@@ -1,0 +1,21 @@
+
+<div class="container">
+<h1> <%= @task.title  %> </h1>
+<h2> <%= @task.details %> </h2>
+<div class="component">
+<ul>
+<% if @task.completed == true %>
+<i class="far fa-check-square"> This task is done </i>
+  <% else %>
+<i class="far fa-square"> This task is Work in Progress </i>
+<% end %>
+</ul>
+</div>
+<div class="component">
+<ul style="list-style-type: none">
+  <li><%= link_to "Edit Task", edit_task_path(@task.id) %></li>
+  <li><%= link_to "Destroy the task foreverly", task_path(@task.id), method: :delete %></li>
+  <li><%= link_to "Back to all tasks", tasks_path  %></li>
+</ul>
+</div>
+</div>
